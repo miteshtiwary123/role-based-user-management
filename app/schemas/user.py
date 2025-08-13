@@ -1,4 +1,7 @@
 from pydantic import BaseModel, EmailStr
+from typing import Optional
+from app.models.user import RoleEnum
+
 
 class UserBase(BaseModel):
     name: str
@@ -6,13 +9,14 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: str
+    role: Optional[RoleEnum] = RoleEnum.user
 
 class UserUpdate(UserBase):
-    pass
+    role: Optional[RoleEnum] = None
 
 class UserOut(UserBase):
     id: int
+    role: RoleEnum
 
     class Config:
         orm_mode = True
-        
