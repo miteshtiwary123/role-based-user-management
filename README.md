@@ -106,6 +106,9 @@ curl -X GET http://localhost:8000/users/ \
 pytest --cov=app --cov-report=term-missing
 ```
 
+## 📝 License
+MIT License
+
 ## 📊 ER Diagram
 ```
 +-----------+ +---------------+
