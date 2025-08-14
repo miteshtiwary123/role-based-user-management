@@ -24,7 +24,7 @@ def read_users(
     sort_by: str = Query("id", pattern="^(id|name|email)$"),
     sort_order: str = Query("asc", pattern="^(asc|desc)$"),
 ):
-    items, total = crud_user.get_user(
+    items, total = crud_user.get_users(
         db,
         limit=limit,
         offset=offset,
